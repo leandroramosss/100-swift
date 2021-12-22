@@ -13,8 +13,13 @@ class ViewController: UITableViewController {
         let fm = FileManager.default
         
         // accept the forced unwrapping and try danger - if this does not work this app has no point in existing
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
+        guard let path = Bundle.main.resourcePath else {
+            return
+        }
+
+        guard let items = try? fm.contentsOfDirectory(atPath: path) else {
+            return
+        }
 
         for item in items {
             if item.hasPrefix("nssl") {
