@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .plain, target: self, action: #selector(scoreTapped))
+
         askQuestion(action: nil)
     }
 
@@ -93,6 +95,12 @@ class ViewController: UIViewController {
         
         // update title
         updateTitle()
+        present(ac, animated: true)
+    }
+
+    @objc func scoreTapped() {
+        let ac = UIAlertController(title: "Score", message: String(score), preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(ac, animated: true)
     }
 }

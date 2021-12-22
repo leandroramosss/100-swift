@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
 
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
         let fm = FileManager.default
         
@@ -53,5 +55,16 @@ class ViewController: UITableViewController {
 
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+
+    @objc func shareTapped() {
+        var items: [Any] = ["This app is great, you should try it!"]
+        if let url = URL(string: "https://www.hackingwithswift.com/100/16") {
+            items.append(url)
+        }
+
+        let vc = UIActivityViewController(activityItems: items, applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 }
