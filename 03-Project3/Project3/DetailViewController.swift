@@ -47,7 +47,6 @@ class DetailViewController: UIViewController {
             shareable.append(imageText)
         }
         let vc = UIActivityViewController(activityItems: shareable, applicationActivities: [])
-        // mandatory on ipad to show where the sharing comes from
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
