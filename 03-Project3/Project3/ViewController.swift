@@ -1,8 +1,3 @@
-//
-//  ViewController.swift
-//  Project3
-//
-
 import UIKit
 
 class ViewController: UITableViewController {

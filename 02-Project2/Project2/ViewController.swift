@@ -27,10 +27,10 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
 
-        askQuestion()
+        askQuestion(action: nil)
     }
 
-    func askQuestion(action: UIAlertAction! = nil) {
+    func askQuestion(action: UIAlertAction?) {
         currentQuestion += 1
         
         // challenge 2

@@ -1,8 +1,3 @@
-//
-//  DetailViewController.swift
-//  Project3
-//
-
 import UIKit
 
 class DetailViewController: UIViewController {
