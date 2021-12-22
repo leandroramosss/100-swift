@@ -12,7 +12,6 @@ class ViewController: UITableViewController {
         
         let fm = FileManager.default
         
-        // accept the forced unwrapping and try danger - if this does not work this app has no point in existing
         guard let path = Bundle.main.resourcePath else {
             return
         }
